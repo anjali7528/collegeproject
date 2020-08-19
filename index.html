@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>WeatherCheck</title>
+    <style>
+        .jumbotron {
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/883/1000/920/dual-screen-theme-picture-wallpaper-preview.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+			border:2px black solid;
+        }
+
+        #exampleInputLocation {
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            border-radius: 20px;
+        }
+	#b2:hover {
+        opacity:1
+}
+		 #b2{
+		 opacity:0.7
+}		 
+		
+		body{
+		background-color:#adb5bd40;
+		}
+		#abc{
+        font-size:100%;
+		margin:200px;}
+		
+		#img:hover {
+        height:55px;
+		width:55px;
+}
+#card1{
+opacity:0.7;
+margin=0;
+}
+#card1:hover{
+opacity:1;
+margin:3%;
+
+}
+			#img1{
+background-color:#26466D;
+}
+		
+
+    </style>
+</head>
+ 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	
+        <a class="navbar-brand" href=""><img src="untitled.png" height="30" width="30"/>WeatherCheck</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html">News <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="blogs.html">Blogs <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="videos.html">Videos <span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ab %}{% endblock %}">
+                    <a class="nav-link" href="about.html">About<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ac %}{% endblock %} ">
+                    <a class="nav-link" href="contact.html">Contact Us<span
+                            class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Button trigger login modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#LoginModal">
+            Log In
+        </button>
+
+        <!--login Modal -->
+        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleLoginModalLabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/login/">
+                            <div class="form-group">
+                                <label for="exampleInputUserName">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername"
+                                    aria-describedby="usernameHelp" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Log In</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger SignUp modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#SignUpModal">
+            Sign Up
+        </button>
+
+        <!--SignUp Modal -->
+        <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalSignUpLabel">Sign-Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/signup/">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="Email.." name="email1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUserName" name="username1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleConfirmPassword">Re-Type Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass2">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading" style="color: white;"><span id="typed"></span></h1>
+            <p>
+                <a href="https://mausam.imd.gov.in/imd_latest/weather_video/video.php" class="btn btn-success my-2" id="b1">View IMD News</a>
+            </p>
+        </div>
+		 <div class="container my-2">
+        <form method="post">
+            <div class="form-group my-5" align="center">
+                <label for="exampleInputText" id="heading" style="font-size:30px;"><b>Enter Your Location !</b></label>
+                <input type="text" class="form-control" id="exampleInputLocation" aria-describedby="Enter Your Location"
+                    name="city_name" required>
+                <div class="my-3">
+                    <button type="submit" class="btn btn-primary" style="background-color:black; color:white; border-color:black; border-radius:10px;" id="b2">Add City</button>
+                </div>
+            </div>
+		
+        </form>
+		</div>
+   </section>
+
+</section>	<section>
+    <div class="container my-2">
+        <div class="card-deck" id="card1">
+            <div class="card my-2" style="width: 18rem;">
+                <div class="card-body" >
+				
+                    <h5 class="card-title"><b>City-Name : Chandigarh</b></h5>
+					<p><b>Date:</b> <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+					<div style="display:inline;">
+					<img class="weather-icon" src="https://www.accuweather.com/images/weathericons/04.svg" width="100" height="100" />
+                    
+			
+				</div>                   
+				   <p class="card-text" style="display:inline-block; margin:30px; font-size:300%;"> <b>30°<sub>C</sub></b><span id="abc"><br></span></p>
+				   <p class="card-text" style="display:inline-block; font-size:120%"> 
+				   <span id="abc">
+				   
+				   <br><b>Weather</b>:Sunny
+				   <br><b>Air Quality</b>:Fair
+				   <br><b>Wind Gusts</b>:22Km/h
+				  
+				   <br><b>RealFeel Shade<sup>TM</sup></b>: 39°
+				   <hr></span></p>
+                   
+                    <div class="mycls" align="center">
+                        <a href=""><button type="delete" class="btm btn-danger">Remove City</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck " id="card1">
+            <div class="card my-2" style="width: 18rem;">
+                <div class="card-body" >
+				
+                    <h5 class="card-title"><b>City-Name : Delhi</b></h5>
+					<p><b>Date: </b><span id="datetime3"></span></p>
+
+<script>
+var dt3 = new Date();
+document.getElementById("datetime3").innerHTML = dt3.toLocaleString();
+</script>
+					<div style="display:inline;">
+					<img class="weather-icon" src="https://www.accuweather.com/images/weathericons/16.svg" width="100" height="100" />
+                    
+			
+				</div>                   
+				   <p class="card-text" style="display:inline-block; margin:30px; font-size:300%;"> <b>34°<sub>C</sub></b><span id="abc"><br></span></p>
+				   <p class="card-text" style="display:inline-block; font-size:120%"> 
+				   <span id="abc">
+				   
+				   <br><b>Weather</b>:Thunderstrom
+				   <br><b>Air Quality</b>:poor
+				   <br><b>Wind Gusts</b>:22Km/h
+				  
+				   <br><b>RealFeel Shade<sup>TM</sup></b>: 40°
+				   <hr></span></p>
+                   
+                    <div class="mycls" align="center">
+                        <a href=""><button type="delete" class="btm btn-danger">Remove City</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck" id="card1">
+            <div class="card my-2" style="width: 18rem;">
+                <div class="card-body" >
+				
+                    <h5 class="card-title"><b>City-Name : Bangalore</b></h5>
+					<p><b>Date:</b> <span id="datetime2"></span></p>
+
+<script>
+var dt2 = new Date();
+document.getElementById("datetime2").innerHTML = dt2.toLocaleString();
+</script>
+					<div style="display:inline;">
+					<img class="weather-icon" src="https://www.accuweather.com/images/weathericons/13.svg" width="100" height="100" />
+                    
+			
+				</div>                   
+				   <p class="card-text" style="display:inline-block; margin:30px; font-size:300%;"> <b>26°<sub>C</sub></b><span id="abc"><br></span></p>
+				   <p class="card-text" style="display:inline-block; font-size:120%"> 
+				   <span id="abc">
+				   
+				   <br><b>Weather</b>:Mist
+				   <br><b>Air Quality</b>:Fair
+				   <br><b>Wind Gusts</b>:20Km/h
+				  
+				   <br><b>RealFeel Shade<sup>TM</sup></b>: 29°
+				   <hr></span></p>
+                   
+                    <div class="mycls" align="center">
+                        <a href=""><button type="delete" class="btm btn-danger">Remove City</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck" id="card1">
+            <div class="card my-2" style="width: 18rem;">
+                <div class="card-body" >
+				
+                    <h5 class="card-title"><b>City-Name : Mumbai</b></h5>
+					<p><b>Date:</b> <span id="datetime1"></span></p>
+
+<script>
+var dt1 = new Date();
+document.getElementById("datetime1").innerHTML = dt1.toLocaleString();
+</script>
+					<div style="display:inline;">
+					<img class="weather-icon" src="https://www.accuweather.com/images/weathericons/18.svg" width="100" height="100" />
+                    
+			
+				</div>                   
+				   <p class="card-text" style="display:inline-block; margin:30px; font-size:300%;"> <b>27°<sub>C</sub></b><span id="abc"><br></span></p>
+				   <p class="card-text" style="display:inline-block; font-size:120%"> 
+				   <span id="abc">
+				   
+				   <br><b>Weather</b>:Rain
+				   <br><b>Air Quality</b>:Faie
+				   <br><b>Wind Gusts</b>:19Km/h
+				  
+				   <br><b>RealFeel Shade<sup>TM</sup></b>: 31°
+				   <hr></span></p>
+                   
+                    <div class="mycls" align="center">
+                        <a href=""><button type="delete" class="btm btn-danger">Remove City</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div> 
+
+</section>
+<section>
+ <div  id="img1" style="padding:30px;">
+     <center><H2 style="color:white;">News </H2></center>
+    </div>
+</section>
+
+<section>
+<div class="card-group" >
+  <div class="card" style="margin:20px;" id="card2">
+    <img class="card-img-top" src="https://i.pinimg.com/originals/28/3d/84/283d84a0d256216d29a293c255f73ab0.jpg" height="300px" width="200px"alt="5-Day Nationwide Weather Forecast">
+    <div class="card-body">
+      <h5 class="card-title">5-Day Nationwide Weather Forecast</h5>
+     <hr> <p class="card-text">The monsoon trough is over Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal and northwest Bay of Bengal on Sunday morning. The monsoon trough is active and lies south of its normal position. The monsoon trough continues to be active in this forecast period. A low pressure area is...<a href="news.html#news1"> Read More</a></p>
+    </div>
+  </div>
+  <div class="card"style="margin:20px;">
+    <img class="card-img-top" src="data:image/jpeg;base64,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" 
+	alt="crashed airplane" height=200px; width:200px;>
+    <div class="card-body">
+      <h5 class="card-title">Experts Say Weather was a Factor in Kerala's Air India Plane Crash</h5>
+     <hr> <p class="card-text">Days after the recent mishap at Kozhikode on August 7, where an Air India Express flight from Dubai was involved in a runway skid, the debate over the cause has continued. Returning from Dubai under the 'Vande Bharat' mission with
+	 <a href="news.html#anchor"> Read More</a></p>
+      
+    </div>
+  </div>
+  <div class="card"style="margin:20px;">
+    <img class="card-img-top" src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/2020-08-16T082111Z_1517640553_RC2QEI9MR11H_RTRMADP_3_CALIFORNIA-WILDFIRE.jpg?w=632" alt="California wildfire" height:"200px"; width:"100px";>
+    <div class="card-body">
+      <h5 class="card-title">California wildfire spawns a rare fire</h5><hr>
+      <p class="card-text">Northern California was alerted to a rare tornado warning unlike any other by the National Weather Service — a fire tornado. Sure enough, a fiery tornado was spotted shortly after the warning on Saturday near the Nevada border, where a large wildfire, winds and extreme temperatures combined to create a dangerous<a href="news.html#anchor2"> Read More</a></p>
+      
+    </div>
+  </div>
+</div>
+</section>
+<section>
+ <div style=" text-align:right;">
+     <a href="news.html">more news ---></a>
+    </div>
+</section>
+<br>
+<section>
+ <div  id="img1" style="padding:30px;">
+     <center><H2 style="color:white;">Blogs </H2></center>
+    </div>
+</section>
+
+<section>
+<div class="card-group" >
+  <div class="card" style="margin:20px;" id="a">
+    <img class="card-img-top" src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/nam-usmercator-12-C-500vortrb_2020081606_whitecounty.png?w=632" height="300px" width="200px"alt="5-Day Nationwide Weather Forecast">
+    <div class="card-body">
+      <h5 class="card-title">Recapping a wild weather weekend in the West</h5>
+     <hr> <p class="card-text">
+	 The ridge in the jet stream actually turned out a bit stronger and a tad farther west over the weekend, helping to push
+ temperatures to record levels back to the coast.
+
+San Francisco reached a high of 99 degrees on Friday, with Monterey reaching 101 degrees. Both temperatures were record highs for not just the day, but the month of August as well.
+
+In Seattle, temperatures soared to a high of 98 degrees on Sunday, which was the highest temperature recorded in the city since the summer of 2009.
+
+And of course, the headliner of the weekend was the high temperature of 130 degrees in Death Valley, which was the hottest temperature recorded at the 
+site since 1913. It also broke the August ...
+	 <a href="blogs.html#news1"> Read More</a></p>
+    </div>
+  </div>
+  <div class="card"style="margin:20px;">
+    <img class="card-img-top" src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/1920px-Koppen-Geiger_Map_A_present.svg_.png?w=632"
+	alt="crashed airplane" height=200px; width:200px;>
+    <div class="card-body">
+      <h5 class="card-title">Tropical climate zones are expanding poleward</h5>
+     <hr> <p class="card-text">
+	 Earth's tropical regions, which are generally characterized by high average temperatures and heavy rainfall, 
+are expanding poleward, according to a new study published in the American Geophysical Union's (AGU) journal of Geophysical Research.
+However, the leading edges of these tropical climate zones are typically hot and dry.
+
+These leading edges of the tropical climate zones have expanded over the past 15 years, with the greatest advancement occurring 
+in the Southern Hemisphere, according
+	 <a href="blogs.html#anchor"> Read More</a></p>
+      
+    </div>
+  </div>
+  <div class="card"style="margin:20px;">
+    <img class="card-img-top" src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/Generic-Perseids-Chart.jpg?w=632" alt="California wildfire" height:"200px"; width:"100px";>
+    <div class="card-body">
+      <h5 class="card-title">Perseid meteor shower peaks tonight</h5><hr>
+      <p class="card-text">
+	  he best meteor shower of the year occurs tonight! Grab a seat outside after sunset to watch the show!
+
+The peak of the shower is the night of Aug. 11 into Aug. 12 (Tuesday night into Wednesday morning). It will produce up to 100 meteors per hour on the peak night.
+					The 2020 version of the Perseid meteor shower will be slightly obscured by a bright moon. The moonlight will make it hard to see the faint meteors. However, the Perseids are known for very bright meteors! 
+
+Check out some of my shots from last year's show.
+	  <a href="blogs.html#anchor2"> Read More</a></p>
+      
+    </div>
+  </div>
+</div>
+</section>
+<section>
+ <div style=" text-align:right;">
+     <a href="blogs.html">more blogs ---></a>
+    </div>
+</section>
+<!-- Section: Group of personal cards -->
+
+<section>
+ <div  id="img1" style="padding:30px;">
+     <center><H2 style="color:white;">Videos </H2></center>
+    </div>
+</section>
+
+<section>
+<div class="card-group" >
+  <div class="card" style="margin:20px;" id="a">
+   
+<iframe  id="v" class="card-img-top" width="400" height="250" src="https://www.youtube.com/embed/SfZWPjld-YE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+
+   <div class="card-body"><br><hr>
+      <h5 class="card-title">Tropical weather forecast</h5><hr>
+
+    </div>
+  </div>
+  <div class="card"style="margin:20px;">
+    <iframe  id="v" class="card-img-top" width="400" height="250" src="https://www.youtube.com/embed/UlrMY-ogBZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+    <div class="card-body"><hr>
+      <h5 class="card-title">Severe thunderstorm warning for Miami-Dade and Broward counties with potential for strong winds</h5><hr>
+     
+      
+    </div>
+  </div>
+  <div class="card"style="margin:20px;">
+    <iframe  id="v" class="card-img-top" width="400" height="250" src="https://www.youtube.com/embed/NJGkS6tuHU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+    <div class="card-body"><hr>
+      <h5 class="card-title">Monsoon storm damages COVID-19 testing site in Mesa</h5><hr>
+      
+      
+    </div>
+  </div>
+</div>
+</section>
+<section>
+ <div style=" text-align:right;">
+     <a href="videos.html">more videos ---></a>
+    </div>
+</section>
+
+<div  style="background-color:#adb5bd78;">
+<hr >
+<!-- Footer -->
+<footer class="page-footer font-small ">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="about.html" Style="color:#495057;">About us</a>
+        </h6>
+      </div>
+    
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Help</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+	  <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf"Style="color:#495057;">Policy</a>
+        </h6>
+      </div>
+	  
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Contact</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Intellectual	property	rights<br>
+means	rights	such	as	copyright,	trade	marks,	domain	names,	design	rights,	
+database	rights,	patents	and	all	other	intellectual	property	rights	of	any	kind	
+whether	or	not	they	are	registered	or	unregistered	(anywhere	in	the	world);<br>Cookie	policy<br>
+means	the	policy	(https://openweather.co.uk/privacy-policy),	which	governs	
+how	we	use	cookies	in	the	Site;</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+<center>
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179319.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179328.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179330.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179326.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179342.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!--Pinterest-->
+    </center>      
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  
+  <!-- Copyright -->
+</div>
+</footer>
+<!-- Footer -->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50"style="background-color:#343a40;">
+    <div class="container text-center">
+      <small>Copyright &copy; WeatherCheck</small>
+    </div>
+  </footer>
+  
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+        <script>
+            window.onload = function () {
+                console.log("loaded")
+                var typed = new Typed('#typed', {
+                    strings: ["Welcome to WeatherCheck !", "Always check the weather situation before you step out!", "Add Locations !", "Check updates !"],
+                    backSpeed: 15,
+                    smartBackspace: true, 
+                    backDelay: 1200,
+                    startDelay: 1000,
+                    typeSpeed: 25,
+                    loop: true,
+                });
+            };
+        </script>
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+			
+			
+
+</html>

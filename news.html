@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Weather news</title>
+</head>
+
+<style>
+    .container {
+        margin-top: 20px;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+	
+		 #b2{
+		 opacity:0.7
+}		 
+		
+		body{
+		background-color:#adb5bd40;
+		}
+		#abc{
+        font-size:100%;
+		margin:200px;}
+		
+		#img:hover {
+        height:55px;
+		width:55px;
+}
+ #more {display: none;}
+		#b2:hover {
+        opacity:1
+}
+#more1 {display: none;}
+		#b2:hover {
+        opacity:1
+}#more2 {display: none;}
+		#b2:hover {
+        opacity:1
+}#more3 {display: none;}
+		#b2:hover {
+        opacity:1
+}
+#more4 {display: none;}
+		#b2:hover {
+        opacity:1
+}
+ #news1{
+ opacity:0.8;
+ }
+ 
+         #news1:hover
+		 {
+		    
+		opacity:1;
+
+			}
+	#anchor{
+ opacity:0.8;
+ }
+ 
+         #anchor:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			
+			#anchor2{
+opacity:0.8;
+ }
+ 
+         #anchor2:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			 #news2{
+ opacity:0.8;
+ }
+ 
+         #news2:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			 #news3{
+ opacity:0.8;
+ }
+ 
+         #news3:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			#img1{
+background-color:#26466D;
+}
+			
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">WeatherCheck</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span
+                            class="sr-only"></span></a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="news.html">News <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="blogs.html">Blogs <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="videos.html">Videos <span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ab %}{% endblock %}">
+                    <a class="nav-link" href="about.html">About<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ac %}{% endblock %} ">
+                    <a class="nav-link" href="contact.html">Contact Us<span
+                            class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Button trigger login modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#LoginModal">
+            Log In
+        </button>
+
+        <!--login Modal -->
+        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleLoginModalLabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/login/">
+                            <div class="form-group">
+                                <label for="exampleInputUserName">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername"
+                                    aria-describedby="usernameHelp" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Log In</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger SignUp modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#SignUpModal">
+            Sign Up
+        </button>
+
+        <!--SignUp Modal -->
+        <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalSignUpLabel">Sign-Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/signup/">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="Email.." name="email1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUserName" name="username1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleConfirmPassword">Re-Type Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass2">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<section>
+
+<!-- padding:30px;>-->
+<nav aria-label="breadcrumb" >
+  <ol class="breadcrumb" style="background-color:#adb5bd78;">
+   <li class="breadcrumb-item"><a href="news.html">News</a></li>
+    <li class="breadcrumb-item"><a href="blogs.html">Blogs</a></li>
+    <li class="breadcrumb-item"><a href="videos.html">Videos</a></li>
+	<li class="breadcrumb-item"><a href="index.html">Weather</a></li>
+  </ol>
+</nav>
+
+
+</section>
+
+<div id="img1">
+<center><h3 style="color:white;"><b><u><br>LATEST WEATHER NEWS</b></u></h3><center>
+
+<br>
+</div>
+<section>
+    <div class="container">
+        <div class="card" style="width: 100%; " id="news1">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Heavy to Very Heavy Rainfall Predicted Over
+                    Manipur, Tripura, Uttarakhand</h5>
+            </center>
+            <img src="https://s.w-x.co/util/image/v/1597673119492_remedia_proxies_2020_08_17_10_02_56_13_India_2_Day_TOMORROW_Aug_17_2020_06_02_29AM.jpg?v=at&w=815&h=458" height="400px" width="100px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                <center>
+				
+				
+				  <h5 class="card-title">5-Day Nationwide Weather Forecast</h5>
+                </center>
+
+<p class="card-text">The monsoon trough is over Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand,
+                    West Bengal and northwest Bay of Bengal on Sunday morning.
+                    The monsoon trough is active and lies south of its normal position. The monsoon trough continues to
+                    be active in this forecast period.A low pressure area is over north Odisha and West Bengal on Monday morning. The low pressure area
+                    will gradually move northwestward for the duration. The low pressure area could be over Jharkhand on
+                    Tuesday morning and over northeast Madhya Pradesh and south Uttar Pradesh on Wednesday morning. 
+					<span id="dots">...</span><span id="more"> It
+                    will bring scattered to widespread rain with isolated heavy rain and thunderstorms over Eastern
+                    India, North Eastern India and north Southern India on Monday and Tuesday and brings fairly
+                    widespread to widespread rain with isolated heavy rain and thunderstorms over Central India and
+                    Northern India in this forecast period.Heavy to extremely heavy rainfall is likely over isolated
+                    places of Uttarakhand on Tuesday. Heavy to very heavy rain is possible over isolated places of
+                    Uttarakhand on Monday, Wednesday and Thursday.
+
+                    The activity of east end of the monsoon trough could intensify from Wednesday. The monsoon trough
+                    could produce fairly widespread to widespread rain with isolated heavy rain over North Eastern India
+                    and Eastern India from Wednesday onward. Heavy to very heavy rain is possible over isolated places
+                    of Jharkhand on Wednesday and Thursday.
+
+                    A low pressure area could be over Pakistan & adjoining Rajasthan and westerly winds from the Arabian
+                    Sea persists in this forecast period. The low pressure area and strong westerly winds from the
+                    Arabian Sea produce fairly widespread to widespread rain with isolated heavy rain and thunderstorms
+                    over the plain area of North India, Western India and the west coast of Southern India in this
+                    period.
+
+                    Maximum temperature of 40°C or more is likely over west of Rajasthan on Monday and Thursday.
+
+                    Maximum temperatures are cooler over the plain area of North India in this period. Maximum
+                    temperatures are cooler or slightly cooler than average over northeast Southern India and Eastern in
+                    this period. Maximum temperatures are slightly warmer than average over west Southern India and
+                    south Western India.
+
+                    Minimum temperatures warmer than normal over North-Eastern India and Western Himalayan Region in
+                    this period. Other areas are near normal in this forecast period.<span></p>
+                 <button onclick="myFunction1()" id="myBtn">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction1() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+				
+				
+				
+				
+				
+				
+				
+				
+				 <div class="container">
+        <div class="card" style="width: 100%;" id="anchor">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Experts Say Weather was a Factor in Kerala's
+                    Air India Plane Crash</h5>
+            </center>
+            <img src="data:image/jpeg;base64,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"
+			height="400px" width="50px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                <center>
+				
+				
+				  <h5 class="card-title">Study says wet runways cause 75% of runway overruns</h5>
+                </center>
+
+<p class="card-text">Days after the recent mishap at Kozhikode on August 7, where an Air India Express
+                    flight from Dubai was involved in a runway skid,
+                    the debate over the cause has continued. Returning from Dubai under the 'Vande Bharat' mission with
+                    190 people on board, the plane skidded off the runway at the 'tabletop' airport in Kozhikode. The
+                    plane plunged 35 feet into the valley below,
+                    resulting in aircraft tear and 19 casualties. Heavy rain, low visibility and a wet runway were among
+                    the adverse factors during the crash
+					<span id="dots1">...</span><span id="more1"> Heavy rains, along with low visibility, are being cited by aviation industry experts as the key
+                    reasons that caused the horrific plane tragedy at Kerala's Kozhikode airport on Friday.
+
+                    According to a senior Airports Authority of India official, factors related to the inclement weather
+                    seem to have led the aircraft to land some 1,000 metres ahead of the safety margin—the required
+                    runway length mandated for aircraft to land at airports like the one in Kozhikode.
+
+                    The aircraft seems to have cleared the required ground-roll area and landed deep into the touchdown
+                    zone. "We have to wait for the findings of the official investigation into the incident," the
+                    official said.
+
+                    Contacted for a comment, the AAI's official response to news agency IANS was that the aircraft
+                    touched down near taxiway 'C' which is approximately 1,000 metres from the beginning of runway 10.
+                    The total length of this runway is 2,700 metres (nearly 10,000 feet).
+
+                    "It was raining over the airfield and reported visibility at the time of landing was 2,000 metres
+                    and wind direction and speed was 270/08 (the wind was gusting from 8 to 17 knots)," the AAI said in
+                    a statement.
+
+                    It said that runway 28 was in use and the pilot attempted the first landing on it "but after a
+                    missed approach, he requested for runway 10". The AAI also pointed out that both the runways at
+                    Kozhikode are equipped with the Instrument Landing System (ILS).
+
+                    "The airport's safety services were pressed into action as per airport emergency plan for timely
+                    action," the statement said.
+
+                    In all, the aviation industry experts agree that a number of factors contributed to playing out of
+                    this tragedy. Meanwhile, the Indian Commercial Pilots' Association (ICPA) stressed the need to avoid
+                    speculation and theories as to the circumstances of this accident.
+
+                    The Centre has said that a formal enquiry will be conducted into the incident by the AAIB, which was
+                    formed in 2012 as an independent accident probe committee under the Ministry of Civil Aviation.<span></p>
+                 <button onclick="myFunction2()" id="myBtn1">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction2() {
+  var dots = document.getElementById("dots1");
+  var moreText = document.getElementById("more1");
+  var btnText = document.getElementById("myBtn1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+                  
+                 <div class="container">
+        <div class="card" style="width: 100%;" id="anchor">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Gloom Deepens at Kerala Landslide Site as
+                    Death Toll Mounts to 24
+                </h5></h5>
+            </center>
+            <img src="https://www.thehindubusinessline.com/news/uolbzk/article32297771.ece/ALTERNATES/LANDSCAPE_1200/idduki-landslidejpg" height="400px" width="100px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                <center>
+				
+				
+				  <h5 class="card-title">5-Day Nationwide Weather Forecast</h5>
+                </center>
+
+<p class="card-text">TAs the confirmed death toll in the landslide in Kerala's Idukki district climbed up
+                    to 24 with the recovery of five more bodies on Saturday, the gloom deepened as the loud wails of a
+                    survivor Manjula rent the air when her son's body was dug out of the debris.
+
+                    On Saturday, the body of her son Dinesh was among the five retrieved from under the debris. As the
+                    men, who were toiling to dig out the victims, were taking Dinesh's body to a waiting vehicle,
+                    Manjula wept inconsolably.
+
+                    The landslide had occurred about 30 km from the popular tourist destination of Munnar on Thursday
+                    night.
+
+                    Area residents said at least 43 persons were still missing. The search operation was continuing
+                    despite inclement weather.
+					<span id="dots2">...</span><span id="more2">    "I do not know why I should live now -- I have lost both my sons. While one of them has been taken
+                    out, the other still lies under the debris. They were studying in a college and had come home due to
+                    the coronavirus pandemic. And now, they are gone; why should I live?" wailed Manjula. She now has
+                    only her husband to share her grief.
+
+                    Deepan, who survived the tragedy and is awaiting surgery at a hospital in Idukki district, broke
+                    down as he said that he had lost his parents and wife who was over seven months pregnant.
+
+                    "A function was slated to be held on Friday regarding her pregnancy. So, we all went to sleep early
+                    on Thursday night. I woke up in the middle of the night to find myself lying stuck in a mound of mud
+                    as our home collapsed. I was stuck there for several hours before I was pulled out. I have lost
+                    everything," Deepan lamented.
+
+                    But there were tales of providential escapes too amid the tales of sorrow.
+
+                    Murugesan, who runs a small canteen at the spot where four rows of houses of a tea estate once
+                    stood, considers himself lucky to have escaped death.
+
+                    "When I woke up on hearing a loud sound... the room that I was staying in along with my son and wife
+                    had collapsed. There was no way to escape. But then, we decided to break free through the roof tiles
+                    and managed to come out," recalled Murugesan, who is convalescing in a hospital in Idukki district.
+
+                    Revenue Minister E Chandrasekheran and Electricity Minister MM Mani, who hails from the district,
+                    visited the spot where rescue operations are on..<span></p>
+                 <button onclick="myFunction3()" id="myBtn2">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction3() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("more2");
+  var btnText = document.getElementById("myBtn2");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+ <div class="container">
+        <div class="card" style="width: 100%;" id="anchor2">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">California wildfire spawns a rare firenado</h5>
+            </center>
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/2020-08-16T082111Z_1517640553_RC2QEI9MR11H_RTRMADP_3_CALIFORNIA-WILDFIRE.jpg?w=632" height="400px" width="50px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+              
+
+<p class="card-text">Northern California was alerted to a rare tornado warning unlike any other by the National Weather Service -- a fire tornado.
+
+Sure enough, a fiery tornado was spotted shortly after the warning on Saturday near the Nevada border, where a large wildfire, winds and extreme temperatures combined to create a dangerous storm.
+The Reno office of the National Weather Service knew the mixture of 60 mph winds with pyrocumulonimbus clouds from the Loyalton Wildfire could produce a fire-induced tornado. The forecasters warned the conditions posed "an extremely dangerous situation for firefighters." 
+					<span id="dots3">...</span><span id="more3"> "The Loyalton Fire to the east of the Sierra Valley exploded most impressively this afternoon, with a very large pyrocumulus and reports of fire tornadoes," the NWS warning said. "Due to the possibility of very strong fire-generated winds and extreme fire behavior with danger to fire personnel, a tornado warning was issued to heighten awareness in the area of the fire."
+					The wildfire has charred 20,000 acres in Lassen County, California, as of Sunday morning and has ignited serious concerns and sparked evacuations on Saturday for portions of Sierra, Lassen and Plumas counties.
+
+Firenados are created when rising hot air from a fire becomes twisted by winds changing direction, much like the more common land tornado. The difference between a regular tornado and the firenado, however, is that winds combine with smoke plums to create especially dangerous conditions.
+
+"In terms of the ingredients, the intense heat of wildfires already causes large, billowing columns of rising hot air and smoke, but what causes them to turn into "pyrocumulonimbus", or thunderstorm clouds caused by wildfire smoke, has to do with the state of the atmosphere above the fire," said AccuWeather Meteorologist Jake Sojda.
+
+					Typically in the west, the air is very dry, so the air simply doesn't have enough moisture for the rising air above the fire to turn into clouds, you just see all of the ash and embers and dust from the wildfire itself. But Sojda explained that if the atmosphere above a wildfire gets an influx of moisture, then the rising air and smoke can also form clouds as it rises and cools.
+
+"A storm system off the California coast helped push some extra moisture into Northern California, enough to allow the rising air and smoke from the Loyalton Fire to turn into clouds and eventually a towering thunderstorm," Sojda said.
+					
+					"Localized wind currents caused by a combination of the thunderstorm, the intense heat from the fire, and the shape of the valley around the fire and storm helped cause the storm to rotate, just like a supercell thunderstorm that are famous for causing tornados in places like the Great Plains," Sojda said.
+					Sojda warns, this poses an extreme danger.
+
+"Not only can these "pyro-thunderstorms" cause wind damage and tornadoes just like a more traditional severe thunderstorm, but they can also cause the fire to behave very erratically and spread very quickly. Embers blown about by the gusty thunderstorm winds can also start new fires. Since it is a thunderstorm, there is also the threat of lightning, which can start new fires, but can also be dangerous to firefighters without shelter who are trying to fight the fire," Sojda said.
+
+					
+					<span></p>
+                 <button onclick="myFunction4()" id="myBtn3">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction4() {
+  var dots = document.getElementById("dots3");
+  var moreText = document.getElementById("more3");
+  var btnText = document.getElementById("myBtn3");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<div class="container">
+        <div class="card" style="width: 100%;" id="news3">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Death Valley reports world's hottest temperature on record in 89 years
+                </h5></h5>
+            </center>
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/6f-Death-valley.jpg?w=632" height="400px" width="50px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                
+
+<p class="card-text">Death Valley was scorched over the weekend when temperatures reached 130 degrees Fahrenheit on Sunday, making it the hottest recorded temperature on Earth since 1931.
+
+The World Meteorological Organization (WMO) will investigate to confirm the temperature reading, which AccuWeather Senior Weather Editor and Meteorologist Jesse Ferrell said could take anywhere from weeks to months and sometimes even years.
+
+
+	<span id="dots4">...</span><span id="more4"> "The investigations are extensive and involve a committee, looking into instrument trustworthiness and calibration, proper 'siting' -- location of the instruments at proper height, with proper ground covering, sufficient shelter from sunlight and distance away from buildings," Ferrell explained. "They also look at nearby weather stations to compare readings, taking into account localized conditions on the day in question."
+
+In 1931, Tunisia recorded 131 degrees Fahrenheit, surpassing the Death Valley record from Sunday by just one degree. The only higher temperature ever recorded was 134 degrees, also reported in Death Valley from 1913.
+While the elevation of the actual valley is very low, it is surrounded by sky-high mountains, peaking at 6,000 feet above sea level on both sides. The valley is also extremely narrow -- only about 10 miles across.
+
+Due to thermodynamics, air becomes hotter as it sinks lower, typically at a rate of five to six degrees per 1,000 feet. Because the air in Death Valley has to travel from the high peaks of the mountains all the way down to the depths of the narrow valley, it gets very hot.
+"The sinking air is more prevalent in Death Valley than just about anywhere else since it is such a low elevation surrounded by very high elevations," Samuhel said.
+
+The sinking air also makes for a very dry environment. A typical year will bring only 2.36 inches of rain to Death Valley, compared to an average of 45 to 50 inches a year in parts of the East Coast.
+
+This year, the monsoon which typically brings moisture to the area has been very weak, resulting in even less rainfall for the Southwest.
+
+The weather pattern responsible for the record-shattering heat in Death Valley was also responsible for a slew of other records west of the Rockies. Samuhel said that every state west of the Rocky Mountain Range, aside from Montana and Wyoming, set a record high temperature for the date on Sunday.
+
+<span></p>
+                 <button onclick="myFunction5()" id="myBtn4">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction5() {
+  var dots = document.getElementById("dots4");
+  var moreText = document.getElementById("more4");
+  var btnText = document.getElementById("myBtn4");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+  </section>
+  <div id="img1">
+
+
+<br>
+</div>
+	<div  style="background-color:#adb5bd78;">
+<hr >
+<!-- Footer -->
+<footer class="page-footer font-small ">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="about.html" Style="color:#495057;">About us</a>
+        </h6>
+      </div>
+    
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Help</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+	  <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf"Style="color:#495057;">Policy</a>
+        </h6>
+      </div>
+	  
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Contact</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Intellectual	property	rights<br>
+means	rights	such	as	copyright,	trade	marks,	domain	names,	design	rights,	
+database	rights,	patents	and	all	other	intellectual	property	rights	of	any	kind	
+whether	or	not	they	are	registered	or	unregistered	(anywhere	in	the	world);<br>Cookie	policy<br>
+means	the	policy	(https://openweather.co.uk/privacy-policy),	which	governs	
+how	we	use	cookies	in	the	Site;</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+<center>
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179319.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179328.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179330.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179326.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179342.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!--Pinterest-->
+    </center>      
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  
+  <!-- Copyright -->
+</div>
+</footer>
+<!-- Footer -->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50"style="background-color:#343a40;">
+    <div class="container text-center">
+      <small>Copyright &copy; WeatherCheck</small>
+    </div>
+  </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

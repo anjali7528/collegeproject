@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>About us @weatherCheck</title>
+    <style>
+        #name1 {
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            border-radius: 20px;
+        }
+
+        #email1 {
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            border-radius: 20px;
+        }
+
+        #phone1 {
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            border-radius: 20px;
+        }
+
+        #review {
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            border-radius: 20px;
+        }
+		#abs{
+				
+background-color:#26466D;
+color:white;
+		
+		}
+		#img1{
+		background-color:#26466D;}
+			
+		 #b2{
+		 opacity:0.7
+}		 
+		
+		body{
+		background-color:#adb5bd40;
+		}
+		#abc{
+        font-size:100%;
+		margin:200px;}
+		
+		#img:hover {
+        height:55px;
+		width:55px;
+}
+ #more {display: none;}
+		#b2:hover {
+        opacity:1
+}
+#more1 {display: none;}
+		#b2:hover {
+        opacity:1
+}#more2 {display: none;}
+		#b2:hover {
+        opacity:1
+}#more3 {display: none;}
+		#b2:hover {
+        opacity:1
+}
+#more4 {display: none;}
+		#b2:hover {
+        opacity:1
+}
+ #news1{
+ opacity:0.8;
+ }
+ 
+         #news1:hover
+		 {
+		    
+		opacity:1;
+
+			}
+	#anchor{
+ opacity:0.8;
+ }
+ 
+         #anchor:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			
+			#anchor2{
+opacity:0.8;
+ }
+ 
+         #anchor2:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			 #news2{
+ opacity:0.8;
+ }
+ 
+         #news2:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			 #news3{
+ opacity:0.8;
+ }
+ 
+         #news3:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			#img1{
+background-color:#26466D;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">WeatherCheck</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span
+                            class="sr-only"></span></a>
+							 <li class="nav-item">
+                    <a class="nav-link" href="news.html">News <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="blogs.html">Blogs <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="videos.html">Videos <span
+                            class="sr-only"></span></a>
+                </li>
+             
+                </li>
+                <li class="nav-item {% block ab %}{% endblock %}">
+                    <a class="nav-link" href="about.html">About<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ac %}{% endblock %} ">
+                    <a class="nav-link" href="contact.html">Contact Us<span
+                            class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Button trigger login modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#LoginModal">
+            Log In
+        </button>
+
+        <!--login Modal -->
+        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleLoginModalLabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/login/">
+                            <div class="form-group">
+                                <label for="exampleInputUserName">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername"
+                                    aria-describedby="usernameHelp" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Log In</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger SignUp modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#SignUpModal">
+            Sign Up
+        </button>
+
+        <!--SignUp Modal -->
+        <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalSignUpLabel">Sign-Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/signup/">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="Email.." name="email1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUserName" name="username1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleConfirmPassword">Re-Type Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass2">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron" id="abs">
+        <h1 align="center"><span id="typedabout"></span></h1>
+		<br>
+		
+       
+        <div class="container">
+		
+            <h2>
+                
+                    We combine weather data, technology, and human insight to improve lives and businesses.
+                
+            </h2>
+        </div>
+    </div>
+	<div class="media">
+  <img src="https://corporate.accuweather.com/wp-content/uploads/2020/06/tropical_phone_480x480@1x.jpg" class="align-self-center mr-3" alt="..." style="margin:2%; border:solid black 1px;">
+  <div class="media-body">
+   <center> <h4 class="mt-0"><br><br><br><br><br><br><q>Over our history, we have many examples of where we made a big difference, prevented injuries and the spread of disease, and saved lives outright.</q></h5><center>
+    </div>
+</div>
+<div id="img1">
+<br>
+</div>
+<br>
+<br>
+<div>
+<h2><center>Over and above Superior Accuracy, AccuWeather delivers Superior Value to help people understand the impact of weather and make the best decisions
+</center></h2>
+</div>
+<br>
+<br>
+
+<!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+    <li data-target="#carousel-example-2" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+ 
+  <div class="carousel-inner" role="listbox">
+   
+    <div class="carousel-item ">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" src="https://corporate.accuweather.com/wp-content/uploads/2020/06/GettyImages-847357738_480x480@1x.jpg"  height="600" alt="Second slide">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Focus on Impact</h3>
+        <p>WeatherCheck’s forecasts and warnings focus on the impact to people and businesses, so they can make the best weather-impacted decisions. A storm producing 2-3 inches of snow may prove insignificant in one geography and bring another to a complete standstill.</p>
+      </div>
+    </div>
+    <div class="carousel-item active">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" src="https://corporate.accuweather.com/wp-content/uploads/2020/05/today-night_thunder_home.jpg"   height="600"alt="Third slide">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Better Communication</h3>
+        <p>AccuWeather’s foundation of Superior Accuracy is further enhanced and expanded with the best communication, wording, detail and displays ensuring that important weather forecasts, warnings, news and information are more useful than other sources and easily understood.</p>
+      </div>
+    </div>
+	 <div class="carousel-item ">
+      <div class="view">
+        <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR1fISz5HVFD9tJqHoENlkoBxN-gMD5fvBIaQ&usqp=CAU" height="600" alt="First slide">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Expertise</h3>
+        <p>In study after study WeatherCheck
+has been proven as the most statistically accurate source of weather
+forecasts and warnings. Our over 100 expert meteorologists plus designers,
+writers, developers all collaborate to bring the weather forecast to life for our
+users, partners and corporate clients.</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+<br>
+<div id="img1">
+<br>
+</div>
+<br>
+<br>
+<div>
+<br>
+    <div class="container my-1s">
+        <div class="myfrm" align="center">
+            <h1>Review Form</h1>
+            <form method="post" action="/about/">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="name1" name="name1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="email1" name="email1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="number" class="form-control" id="phone1" name="phone1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputreview">Your review</label>
+                    <textarea rows="7" cols="50" class="form-control" id="review" name="review"></textarea>
+                </div>
+                <button type="submit" class="btn btn-info my-2">Submit</button>
+            </form>
+        </div>
+
+    </div>
+	<br>
+<div id="img1">
+<br>
+</div>
+<br>
+<br>
+<div>
+<footer class="page-footer font-small ">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="about.html" Style="color:#495057;">About us</a>
+        </h6>
+      </div>
+    
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Help</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+	  <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf"Style="color:#495057;">Policy</a>
+        </h6>
+      </div>
+	  
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Contact</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Intellectual	property	rights<br>
+means	rights	such	as	copyright,	trade	marks,	domain	names,	design	rights,	
+database	rights,	patents	and	all	other	intellectual	property	rights	of	any	kind	
+whether	or	not	they	are	registered	or	unregistered	(anywhere	in	the	world);<br>Cookie	policy<br>
+means	the	policy	(https://openweather.co.uk/privacy-policy),	which	governs	
+how	we	use	cookies	in	the	Site;</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+<center>
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179319.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179328.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179330.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179326.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179342.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!--Pinterest-->
+    </center>      
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  
+  <!-- Copyright -->
+</div>
+</footer>
+<!-- Footer -->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50"style="background-color:#343a40;">
+    <div class="container text-center">
+      <small>Copyright &copy; WeatherCheck</small>
+    </div>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+    <script>
+        window.onload = function () {
+            console.log("loaded")
+            var typed = new Typed('#typedabout', {
+                strings: ["Welcome to WeatherCheck !", "Kindly review the site.", "Thank you !"],
+                backSpeed: 15,
+                smartBackspace: true,
+                backDelay: 1200,
+                startDelay: 1000,
+                typeSpeed: 25,
+                loop: true,
+            });
+        };
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

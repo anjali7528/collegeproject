@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Weather Blogs</title>
+</head>
+
+<style>
+    .container {
+        margin-top: 20px;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+	
+		 #b2{
+		 opacity:0.7
+}		 
+		
+		body{
+		background-color:#adb5bd40;
+		}
+		#abc{
+        font-size:100%;
+		margin:200px;}
+		
+		#img:hover {
+        height:55px;
+		width:55px;
+}
+ #more {display: none;}
+		#b2:hover {
+        opacity:1
+}
+#more1 {display: none;}
+		#b2:hover {
+        opacity:1
+}#more2 {display: none;}
+		#b2:hover {
+        opacity:1
+}#more3 {display: none;}
+		#b2:hover {
+        opacity:1
+}
+#more4 {display: none;}
+		#b2:hover {
+        opacity:1
+}
+ #news1{
+ opacity:0.8;
+ }
+ 
+         #news1:hover
+		 {
+		    
+		opacity:1;
+
+			}
+	#anchor{
+ opacity:0.8;
+ }
+ 
+         #anchor:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			
+			#anchor2{
+opacity:0.8;
+ }
+ 
+         #anchor2:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			 #news2{
+ opacity:0.8;
+ }
+ 
+         #news2:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			 #news3{
+ opacity:0.8;
+ }
+ 
+         #news3:hover
+		 {
+		    
+		opacity:1;
+
+			}
+			#img1{
+background-color:#26466D;
+}
+			
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">WeatherCheck</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span
+                            class="sr-only"></span></a>
+                </li>
+         <li class="nav-item">
+                    <a class="nav-link" href="news.html">News <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="blogs.html">Blogs <span
+                            class="sr-only"></span></a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="videos.html">Videos <span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ab %}{% endblock %}">
+                    <a class="nav-link" href="about.html">About<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item {% block ac %}{% endblock %} ">
+                    <a class="nav-link" href="contact.html">Contact Us<span
+                            class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Button trigger login modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#LoginModal">
+            Log In
+        </button>
+
+        <!--login Modal -->
+        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleLoginModalLabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/login/">
+                            <div class="form-group">
+                                <label for="exampleInputUserName">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername"
+                                    aria-describedby="usernameHelp" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Log In</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger SignUp modal -->
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#SignUpModal">
+            Sign Up
+        </button>
+
+        <!--SignUp Modal -->
+        <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalSignUpLabel">Sign-Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/signup/">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="Email.." name="email1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUserName" name="username1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleConfirmPassword">Re-Type Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="pass2">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<section>
+
+<!-- padding:30px;>-->
+<nav aria-label="breadcrumb" >
+  <ol class="breadcrumb" style="background-color:#adb5bd78;">
+   <li class="breadcrumb-item"><a href="news.html">News</a></li>
+    <li class="breadcrumb-item"><a href="blogs.html">Blogs</a></li>
+    <li class="breadcrumb-item"><a href="videos.html">Videos</a></li>
+	<li class="breadcrumb-item"><a href="index.html">Weather</a></li>
+  </ol>
+</nav>
+
+
+
+</section>
+
+<div id="img1">
+<center><h3 style="color:white;"><b><u> <br>WEATHER BLOGS</b></u></h3><center>
+
+<br>
+</div>
+
+<section>
+<br>
+    <div class="container">
+        <div class="card" style="width: 100%;" id="news1">
+            <CENTER><h5 class="card-title" style="background-color: lightblue;">Recapping a wild weather weekend in the West</h5></CENTER>
+                 <label class="card-title"><u><em>By Brian Thompson, AccuWeather meteorologist </u></em></label>
+				 			<p>Published Aug. 17, 2020 9:45 PM</p>
+
+
+				 
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/nam-usmercator-12-C-500vortrb_2020081606_whitecounty.png?w=632" height="400px" width="100px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+		
+				 
+               
+
+<p class="card-text">The ridge in the jet stream actually turned out a bit stronger and a tad farther west over the weekend, helping to push
+ temperatures to record levels back to the coast.
+
+San Francisco reached a high of 99 degrees on Friday, with Monterey reaching 101 degrees. Both temperatures were record highs for not just the day, but the month of August as well.
+
+In Seattle, temperatures soared to a high of 98 degrees on Sunday, which was the highest temperature recorded in the city since the summer of 2009.
+
+And of course, the headliner of the weekend was the high temperature of 130 degrees in Death Valley, which was the hottest temperature recorded at the 
+site since 1913. It also broke the August record by 3 degrees.
+<span id="dots">...</span><span id="more"> 
+<img src="Screenblog1.png" height="400"; width="600"/>
+<br> This situation was the opposite of that. It's similar to the situation that develops when condensation trails form behind a jet flying high above us. 
+Once the exhaust leaves the jet,it soon moves at the mercy of the winds at that elevation, which are typically much less than the jet's speed.
+The other wild weather this weekend was the unusual cluster of thunderstorms that rolled along the California coast Sunday.
+
+The storms were fueled by a surge in moisture coming up from the south. I use precipitable water in this blog a lot to track the magnitude and location of moisture surges. 
+This one was particularly significant.
+
+The weather balloon launched in Oakland, California, on Sunday morning recorded a precipitable water value of 1.83 inches, which was the highest value recorded at the site since 
+records began in 1948.
+The surge in moisture (partially linked to Tropical Storm Fausto in the eastern Pacific) helped to fuel thunderstorms with strong winds and frequent lightning around the
+ San Francisco Bay Area and all along the Northern California coast.
+
+The amount of lightning was pretty remarkable for this part of the country. Take a look at the lightning strikes over a 24-hour period (Saturday afternoon through Sunday afternoon) 
+
+across the Southwest. Over 9,000 lightning strikes were recorded.
+<img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/44_33_237B3209_850638_white.gif?w=632" height="400"; width="600"/>" height="400"; width="600"/>
+There are still some thunderstorms around on Monday, and with the heat wave persisting through the early part of the week before easing, 
+the environment will continue to be ripe forwildfires.
+
+In addition, thunderstorms across interior parts of the Northwest early this week will bring the potential for dry lightning. This will bring further concern for wildfires,
+ especially with temperatures running so high.
+
+Across the Southwest, the persistent ridge in the jet stream will keep the extreme heat going through much of the week. However, monsoon thunderstorms will occasionally bring 
+some rain and clouds to help cool things off a bit. These storms will also bring the threat for some dust storms as well, just like we've seen over the past couple of days.
+
+So for the week ahead, we'll be keeping an eye on the monsoon, the heat easing a bit and also the progress of Hurricane Genevieve. The storm will track northwestward over 
+the next several days, and while it will weaken as it does so, it will potentially spread some moisture into California toward the weekend. While it's way too early to say 
+if and to what extent the moisture reaches the Southwest, it could bring an elevated chance for thunderstorms again. I'll take a closer look at that a little later in the week.
+
+<span></p>
+
+                 <button onclick="myFunction1()" id="myBtn">Read more</button>
+				 
+         </div>
+                  </div>
+
+
+<script>
+function myFunction1() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+				
+				
+				
+				
+				
+				
+				
+				
+				 <div class="container">
+        <div class="card" style="width: 100%;" id="anchor">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Tropical climate zones are expanding poleward</h5>
+					<label class="card-title"><u><em>By Brett Anderson, AccuWeather senior meteorologist </u></em></label>
+				 			<p> Published Aug. 11, 2020 9:32 PM</p>
+
+            </center>
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/1920px-Koppen-Geiger_Map_A_present.svg_.png?w=632"
+			height="400px" width="100px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                
+
+<p class="card-text">Earth's tropical regions, which are generally characterized by high average temperatures and heavy rainfall, 
+are expanding poleward, according to a new study published in the American Geophysical Union's (AGU) journal of Geophysical Research.
+However, the leading edges of these tropical climate zones are typically hot and dry.
+
+These leading edges of the tropical climate zones have expanded over the past 15 years, with the greatest advancement occurring 
+in the Southern Hemisphere, according to the AGU report.
+
+					<span id="dots1">...</span><span id="more1"> Based on satellite observations, the tropical zones are advancing
+					at a rate of 0.25 to 0.50 degrees latitude per decade. Researchers are still uncertain if this rate will increase,
+					decrease or remain the same over the coming decades.
+
+The trigger for this expansion is likely a result of ocean warming due to climate change, which also helps explain the greater expansion 
+into the Southern Hemisphere which has a much larger water surface than the Northern Hemisphere.
+
+<span></p>
+                 <button onclick="myFunction2()" id="myBtn1">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction2() {
+  var dots = document.getElementById("dots1");
+  var moreText = document.getElementById("more1");
+  var btnText = document.getElementById("myBtn1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>		
+				
+				 <div class="container">
+        <div class="card" style="width: 100%;" id="news2">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">TGlobal ice losses continue to mount</h5>
+					<label class="card-title"><u><em>By Brett Anderson, AccuWeather senior meteorologist </u></em></label>
+				 			<p> Published Aug. 19, 2020 12:11 AM</p>
+
+            </center>
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/cropped-marbleaug10.png?h=128"
+			height="400px" width="100px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                
+
+<p class="card-text">Earth's tropical regions, which are generally characterized by high average temperatures and heavy rainfall, 
+are expanding poleward, according to a new study published in the American Geophysical Union's (AGU) journal of Geophysical Research.
+However, the leading edges of these tropical climate zones are typically hot and dry.
+
+These leading edges of the tropical climate zones have expanded over the past 15 years, with the greatest advancement occurring 
+in the Southern Hemisphere, according to the AGU report.
+
+					<span id="dots2">...</span><span id="more2"> Based on satellite observations, the tropical zones are advancing
+					at a rate of 0.25 to 0.50 degrees latitude per decade. Researchers are still uncertain if this rate will increase,
+					decrease or remain the same over the coming decades.
+
+The trigger for this expansion is likely a result of ocean warming due to climate change, which also helps explain the greater expansion 
+into the Southern Hemisphere which has a much larger water surface than the Northern Hemisphere.
+
+<span></p>
+                 <button onclick="myFunction3()" id="myBtn2">Read more</button>
+                 </div>
+                  </div>
+                  
+<script>
+function myFunction3() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("more2");
+  var btnText = document.getElementById("myBtn2");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+ <div class="container">
+        <div class="card" style="width: 100%;" id="anchor2">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Perseid meteor shower peaks tonight</h5>
+<label class="card-title"><u><em>By Dave Samuhel, AccuWeather senior meteorologist</u></em></label>
+				 			<p>  Published Aug. 11, 2020 9:30 PM</p>           
+		   </center>
+			
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/Generic-Perseids-Chart.jpg?w=632" height="400px" width="50px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+              
+
+<p class="card-text">The best meteor shower of the year occurs tonight! Grab a seat outside after sunset to watch the show!
+
+The peak of the shower is the night of Aug. 11 into Aug. 12 (Tuesday night into Wednesday morning). It will produce up to 100 meteors per hour on the peak night.
+					The 2020 version of the Perseid meteor shower will be slightly obscured by a bright moon. The moonlight will make it hard to see the faint meteors. However, the Perseids are known for very bright meteors! 
+
+Check out some of my shots from last year's show.
+
+					<span id="dots3">...</span><span id="more3"> Even though the Perseids will be most active after midnight, I encourage people to start looking once it gets dark in the evening. You will be more likely to see a long-lived, bright meteor fly across a large portion of the sky during the evening. Plus, the moon rises after midnight, and it will wash out some meteors. 
+					VIEWING TIPS
+
+To get the most out of your Perseid meteor viewing experience, follow these steps: 
+
+1) Dedicate a solid hour to doing nothing but looking for meteors. If you look for only a few minutes, you might not see any. 
+
+2) Make yourself comfortable. Lay back on a lounge chair or a blanket on the grass. Don’t sit in a normal chair and look up; your neck will quickly get tired. 
+
+3) Avoid looking at ANY source of light. No phones! Turn off all exterior lights. Try not to look directly at the moon either (for those watching after midnight).
+
+Viewing Conditions
+<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ei/isaeun.gif" height="400" width="500">
+					<br>For Asian viewers, the best nights will be Tuesday night and Wednesday night. The absolute peak of the shower will occur Wednesday evening local time in Japan.
+					<img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/graphic-3.png?w=632" height="400" width="550">
+<br>Send us your pictures or stories of your experiences with the 2020 Perseids meteor shower! Thanks for reading. Just look up; you never know what you will see!
+					<span></p>
+                 <button onclick="myFunction4()" id="myBtn3">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction4() {
+  var dots = document.getElementById("dots3");
+  var moreText = document.getElementById("more3");
+  var btnText = document.getElementById("myBtn3");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<div class="container">
+        <div class="card" style="width: 100%;" id="news3">
+            <center>
+                <h5 class="card-title" style="background-color: lightblue;">Death Valley reports world's hottest temperature on record in 89 years
+                </h5></h5>
+            </center>
+            <img src="https://wordpress.accuweather.com/wp-content/uploads/2020/08/6f-Death-valley.jpg?w=632" height="400px" width="50px" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                
+
+<p class="card-text">Death Valley was scorched over the weekend when temperatures reached 130 degrees Fahrenheit on Sunday, making it the hottest recorded temperature on Earth since 1931.
+
+The World Meteorological Organization (WMO) will investigate to confirm the temperature reading, which AccuWeather Senior Weather Editor and Meteorologist Jesse Ferrell said could take anywhere from weeks to months and sometimes even years.
+
+
+	<span id="dots4">...</span><span id="more4"> "The investigations are extensive and involve a committee, looking into instrument trustworthiness and calibration, proper 'siting' -- location of the instruments at proper height, with proper ground covering, sufficient shelter from sunlight and distance away from buildings," Ferrell explained. "They also look at nearby weather stations to compare readings, taking into account localized conditions on the day in question."
+
+In 1931, Tunisia recorded 131 degrees Fahrenheit, surpassing the Death Valley record from Sunday by just one degree. The only higher temperature ever recorded was 134 degrees, also reported in Death Valley from 1913.
+While the elevation of the actual valley is very low, it is surrounded by sky-high mountains, peaking at 6,000 feet above sea level on both sides. The valley is also extremely narrow -- only about 10 miles across.
+
+Due to thermodynamics, air becomes hotter as it sinks lower, typically at a rate of five to six degrees per 1,000 feet. Because the air in Death Valley has to travel from the high peaks of the mountains all the way down to the depths of the narrow valley, it gets very hot.
+"The sinking air is more prevalent in Death Valley than just about anywhere else since it is such a low elevation surrounded by very high elevations," Samuhel said.
+
+The sinking air also makes for a very dry environment. A typical year will bring only 2.36 inches of rain to Death Valley, compared to an average of 45 to 50 inches a year in parts of the East Coast.
+
+This year, the monsoon which typically brings moisture to the area has been very weak, resulting in even less rainfall for the Southwest.
+
+The weather pattern responsible for the record-shattering heat in Death Valley was also responsible for a slew of other records west of the Rockies. Samuhel said that every state west of the Rocky Mountain Range, aside from Montana and Wyoming, set a record high temperature for the date on Sunday.
+
+<span></p>
+                 <button onclick="myFunction5()" id="myBtn4">Read more</button>
+                 </div>
+                  </div>
+
+<script>
+function myFunction5() {
+  var dots = document.getElementById("dots4");
+  var moreText = document.getElementById("more4");
+  var btnText = document.getElementById("myBtn4");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+</section>
+<section>
+<div class="container my-2">
+            <h1 style="  font-style: italic; color:red;">Send Us Your Blogs:</h1>
+            <form method="post" action="/contact/">
+               
+                <div class="form-group ">
+                    <label for="inputName" style="color:red;">Name</label>
+                    <input type="text" class="form-control mx-2" id="name2" name="name2" placeholder="Enter Your Name"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" style="color:red;">Email</label>
+                    <input type="email" class="form-control mx-2" id="email2" name="email2"
+                        placeholder="Enter Your email" required>
+                </div>
+                <div class="form-group ">
+                    <label for="inputPhone" style="color:red;">Phone Number</label>
+                    <input type="number" class="form-control mx-2" id="phone2" name="phone2"
+                        placeholder="Enter Your Contact Number" required>
+                </div>
+                <div class="form-group ">
+                    <label for="inputquery" style="color:red;">Content ?</label>
+                    <textarea rows="7" cols="70" class="form-control mx-1" id="query" name="query"
+                        placeholder="Enter your content here ?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger my-2">Submit</button>
+				<br>
+				<br>
+				<caption>* You can also mail us your content on <em>weathercheckblogs@gmail.com</em>
+				</caption>
+            </form>
+</section>
+
+ <div id="img1">
+
+
+<br>
+</div>
+
+	<div  style="background-color:#adb5bd78;">
+<hr >
+<!-- Footer -->
+<footer class="page-footer font-small ">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="about.html" Style="color:#495057;">About us</a>
+        </h6>
+      </div>
+    
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Help</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+	  <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf"Style="color:#495057;">Policy</a>
+        </h6>
+      </div>
+	  
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact.html"Style="color:#495057;">Contact</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Intellectual	property	rights<br>
+means	rights	such	as	copyright,	trade	marks,	domain	names,	design	rights,	
+database	rights,	patents	and	all	other	intellectual	property	rights	of	any	kind	
+whether	or	not	they	are	registered	or	unregistered	(anywhere	in	the	world);<br>Cookie	policy<br>
+means	the	policy	(https://openweather.co.uk/privacy-policy),	which	governs	
+how	we	use	cookies	in	the	Site;</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+<center>
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179319.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179328.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179330.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"><img src="https://image.flaticon.com/icons/svg/179/179326.svg" height="50" width="50" id="img"/> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> <img src="https://image.flaticon.com/icons/svg/179/179342.svg" height="50" width="50" id="img"/></i>
+          </a>
+          <!--Pinterest-->
+    </center>      
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  
+  <!-- Copyright -->
+</div>
+</footer>
+<!-- Footer -->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50"style="background-color:#343a40;">
+    <div class="container text-center">
+      <small>Copyright &copy; WeatherCheck</small>
+    </div>
+  </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
